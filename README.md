@@ -1,27 +1,31 @@
 # Elrond Angular DApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+**WIP** Elrond DApp with Angular
 
-## Development server
+Trying to re-create https://github.com/ElrondNetwork/dapp-template that is based on react
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Run
+  
+    npm install
+    ng serve
 
-## Code scaffolding
+## Todo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- try to clear console errors for dependencies
+- show account details
+- add login, logout buttons and some basic styling with bootstrap
+- split into components
+- implement more login methods
 
-## Build
+## Steps that where needed to make it run
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Added the following to polyfills.ts
 
-## Running unit tests
+    (window as any).global = window;
+    global.Buffer = global.Buffer || require('buffer').Buffer;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Added the following dependencies
 
-## Running end-to-end tests
+    npm install @elrondnetwork/erdjs-wallet-connect-provider @elrondnetwork/erdjs-web-wallet-provider
+    npm install qrcode @types/qrcode
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
